@@ -42,7 +42,7 @@
       :current-page="tableData.currentPage"
       :page-sizes="[15,30,50,100]"
       :page-size="tableData.pageSize"
-      layout="total, sizes, prev, pager, next, jumper"
+      layout="total,prev,pager,next,jumper"
       :total="tableData.total">
     </el-pagination>
   </div>
