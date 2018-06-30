@@ -16,7 +16,7 @@
 .el-pagination { padding:20px 0; text-align:center; }
 
 .dialog-container {
-  position:fixed; top:0; left:0; z-index:20000; width:100vw; height:100vh;
+  position:fixed; top:0; left:0; z-index:20000; width:100%; height:100%;
   display:flex; justify-content:center; align-items:center;
   background-color: rgba(0,0,0,.7);
   transition-duration:300ms;
@@ -49,7 +49,7 @@ html, body, #__nuxt, #__layout { height:100%; }
       .page-container {
         // border-left:@padding solid #fdfdfd;
         // border-right:@padding solid #fdfdfd;
-        min-height:calc(~"100vh" - @barHeight - @padding * 2);
+        min-height:calc(~"100%" - @barHeight - @padding * 2);
         // background-color:#f0f0f0;
       }
 
