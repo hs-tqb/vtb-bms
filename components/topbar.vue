@@ -24,13 +24,13 @@
           transition-duration:400ms;
           &:hover { background:#f56c6c; }
         }
-        padding:20px; width:400px;
+        padding:20px; width:300px;
         background:#fff;
         border-radius:7px;
         box-shadow:0 2px 7px 3px #ddd;
         input {
           display:block;
-          margin:20px 0; padding:0 10px; width:calc(400px - 40px - 2px);
+          margin:20px 0; padding:0 10px; width:calc(300px - 40px - 2px);
           line-height:3;
           border:1px solid #ddd;
           border-radius:4px;

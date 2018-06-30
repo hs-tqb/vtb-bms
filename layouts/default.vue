@@ -23,14 +23,15 @@
   pointer-events:none; opacity:0;
   &.show { pointer-events:auto; opacity:1; }
 }
+html, body, #__nuxt, #__layout { height:100%; }
 #__default {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 100%;
   overflow:hidden;
   #layout-right {
     flex: 1;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     //background: #f5f5f5;
     #topbar,
@@ -40,7 +41,7 @@
     #layout-main {
       @padding:15px;
       padding:@padding;
-      height: calc(~"100vh" - @barHeight);
+      height: calc(~"100%" - @barHeight);
       background-color:#fdfdfd;
       // flex:1;
       overflow: auto;
