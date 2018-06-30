@@ -10,7 +10,8 @@ const env = {
     baseURL:'http://47.89.11.105:8091'
   },
   production: {
-    baseURL:'http://mg.valp.io'
+    baseURL:'http://47.89.11.105:8091',
+    // baseURL:'http://mg.valp.io'
   }
 };
 

@@ -74,14 +74,14 @@ export default {
     loadTableData() {
       this.dataReady = false
       let { pageSize,currentPage,api } = this.tableData
-      this.$http.post(api, {
+      this.$http.get(api, { params:{
         pageSize, currentPage
-      })
+      }})
       .then(resp=>{
         this.dataReady = true
         if ( resp.state !== 1 ) return;
 
-        console.log(  resp.data.result[0] )
+        // console.log(  resp.data.result[0] )
 
         let rows = resp.data.result;
 
@@ -92,6 +92,8 @@ export default {
     }
   },
   mounted() {
+    let token = this.$util.getToken();
+    console.log('token ', token)
     this.loadTableData();
   }
 }

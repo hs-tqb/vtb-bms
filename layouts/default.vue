@@ -15,8 +15,8 @@
 }
 .el-pagination { padding:20px 0; text-align:center; }
 
-.dialog-container { 
-  position:fixed; top:0; left:0; z-index:20000; width:100vw; height:100vh; 
+.dialog-container {
+  position:fixed; top:0; left:0; z-index:20000; width:100vw; height:100vh;
   display:flex; justify-content:center; align-items:center;
   background-color: rgba(0,0,0,.7);
   transition-duration:300ms;
@@ -39,11 +39,12 @@
     }
     #layout-main {
       @padding:15px;
-      padding:@padding; 
+      padding:@padding;
       height: calc(~"100vh" - @barHeight);
       background-color:#fdfdfd;
       // flex:1;
       overflow: auto;
+      -webkit-overflow-scrolling: touch;
       .page-container {
         // border-left:@padding solid #fdfdfd;
         // border-right:@padding solid #fdfdfd;
@@ -68,7 +69,7 @@
       <sidebar/>
     </div>
     <div id="layout-right">
-      <topbar/> 
+      <topbar/>
       <div id="layout-main">
         <nuxt class="page-container"/>
       </div>

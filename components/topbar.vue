@@ -48,7 +48,7 @@
         <i :class="`el-icon-d-arrow-${isSidebarCollapsed?'right':'left'}`"></i>
       </el-button>
     </div>
-    <!--<div class="fr">
+    <div class="fr">
       <el-button class="avatar" @click="toggleLoginState">
         <i></i> {{hasToken?'注销':'登录'}}
       </el-button>
@@ -56,11 +56,11 @@
     <div id="dialog-login" class="dialog-container" :class="showLoginDialog?'show':''">
       <div class="inner-wrapper">
         <i class="close" @click="close"></i>
-        <input type="text" v-model="loginDialog.userName" placeholder="用户名">
-        <input type="text" v-model="loginDialog.password" placeholder="密码">
+        <input type="text" v-model="loginDialog.userName" placeholder="用户名" @keyup.enter="login">
+        <input type="text" v-model="loginDialog.password" placeholder="密码" @keyup.enter="login">
         <input type="button" class="bg-primary" value="登录" @click="login">
       </div>
-    </div>-->
+    </div>
   </div>
 </template>
 

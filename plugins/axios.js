@@ -23,9 +23,9 @@ instance.interceptors.request.use(httpRequest =>{
   httpRequest.url = (url.indexOf('http')===0)? url: baseURL+url
 
 
-  console.log('____________');
-  console.log( httpRequest.url );
-  console.log('____________');
+  // console.log('____________');
+  // console.log( httpRequest.url );
+  // console.log('____________');
 
   // if ( httpRequest.method === 'post' ) {
   //   ( httpRequest.data? httpRequest.data: (httpRequest.data={}) )
