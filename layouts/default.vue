@@ -13,7 +13,7 @@
   text-align:center;
   th { text-align:inherit; }
 }
-.el-pagination { padding:20px 0; text-align:center; }
+.el-pagination { padding:20px 0; text-align:center; overflow:auto; -webkit-overflow-scrolling: touch; }
 
 .dialog-container {
   position:fixed; top:0; left:0; z-index:20000; width:100%; height:100%;
