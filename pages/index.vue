@@ -79,20 +79,13 @@ export default {
       .then(resp=>{
         this.dataReady = true
         if ( resp.state !== 1 ) return;
-
-        // console.log(  resp.data.result[0] )
-
-        let rows = resp.data.result;
-
-
-        this.tableData = { ...resp.data, rows };
+        this.tableData = { ...this.tableData, ...resp.data, rows:resp.data.result };
       })
       .catch(err=>{ this.dataReady = true })
     }
   },
   mounted() {
     let token = this.$util.getToken();
-    console.log('token ', token)
     this.loadTableData();
   }
 }
