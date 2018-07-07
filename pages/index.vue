@@ -2,7 +2,7 @@
 #filter { 
   margin:20px; 
   .el-input { 
-    margin-right:10px; width:300px;
+    margin-right:10px; width:200px;
   }
   .el-button {
     width:100px;
