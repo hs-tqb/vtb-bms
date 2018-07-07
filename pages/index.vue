@@ -1,8 +1,29 @@
 <style lang="less">
+#filter { 
+  margin:20px; 
+  .el-input { 
+    margin-right:10px; width:300px;
+  }
+  .el-button {
+    width:100px;
+  }
+}
 </style>
 
 <template>
   <div id="page-home" v-loading="!dataReady">
+    <div id="filter">
+      <!-- <input type="text" placeholder="手机号" v-model="tableData.mobile">
+      <input type="text" placeholder="手机/邮箱" v-model="tableData.loginName">
+      <input type="button" class="btn primary" value="查询"> -->
+      <el-input v-model.trim="tableData.mobile"    placeholder="手机号"></el-input>
+      <el-input v-model.trim="tableData.loginName" placeholder="登陆名"></el-input>
+      <el-button type="primary" @click="filter">查询</el-button>
+      <el-button type="danger" @click="clearFilter">清空</el-button>
+      <a style="display:inline-block; margin-left:10px;" href="http://47.89.11.105:8091/vtb/customer/export" target="_blank">
+        <el-button type="success">导出</el-button>
+      </a>
+    </div>
     <el-table
       :data="tableData.rows"
       style="width:100%"
@@ -56,12 +77,26 @@ export default {
         api:'customer',
         pageSize:100,
         currentPage:1,
+        mobile:'',
+        loginName:'',
         total:0,
         rows:[]
       }
     }
   },
   methods: {
+    filter() {
+      let { mobile, loginName } = this.tableData
+      if ( !mobile && !loginName ) return;
+      this.loadTableData()
+    },
+    clearFilter() {
+      let { mobile, loginName } = this.tableData
+      if ( !mobile && !loginName ) return;
+      this.tableData.mobile = ''
+      this.tableData.loginName = ''
+      this.loadTableData()
+    },
     handleSizeChange(len) {
       this.tableData.pageSize = len;
       this.loadTableData();
@@ -72,9 +107,9 @@ export default {
     },
     loadTableData() {
       this.dataReady = false
-      let { pageSize,currentPage,api } = this.tableData
+      let { pageSize,currentPage,mobile, loginName, api } = this.tableData
       this.$http.get(api, { params:{
-        pageSize, currentPage
+        pageSize, currentPage, mobile:mobile||undefined, loginName:loginName||undefined
       }})
       .then(resp=>{
         this.dataReady = true
