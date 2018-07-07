@@ -31,7 +31,7 @@
       stripe
     >
       <el-table-column type="index" label="#" width="40"></el-table-column>
-      <el-table-column prop="id" label="账户id"></el-table-column>
+      <el-table-column prop="mobile" label="手机号码"></el-table-column>
       <el-table-column prop="loginName" label="邮箱" width="180"></el-table-column>
       <el-table-column label="余额">
         <template slot-scope="scope">
